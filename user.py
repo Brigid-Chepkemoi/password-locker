@@ -1,9 +1,36 @@
 class User:
+    user_list = []
 
-     user_List=[]
+    def _init_(self, username, email, user_list):
+        self.username = username
+        self.email = email
+        self.user_list = user_list
 
-    def _init_(self,username,email):
-        self.username=username
-        self.email=email
+    def save_user(self):
+        if self in self.user_list:
+            print("user already exist")
+        else:
+            self.user_list.append(self)
+            print("User added successfully")
 
-if User.username == username
+    def get_user(self, username):
+        for user in self.user_list:
+            if user.username == username:
+                return user
+            else:
+                return 0
+
+    def modify_user(self, username, email):
+        for user in self.user_list:
+            if user.username == username:
+                self.user_list.remove(user)
+                self._init_(username, email)
+            else:
+                print("User doesn't exist")
+
+    def delete_user(self, username):
+        for user in self.user_list:
+            if user.username == username:
+                self.user_list.remove(user)
+            else:
+                print("User doesn't exist")
