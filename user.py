@@ -1,7 +1,10 @@
 class User:
     user_list = []
+    username = ""
+    email = ""
+    authenticated = False
 
-    def _init_(self, username, email, user_list):
+    def __init__(self, username, email, user_list):
         self.username = username
         self.email = email
         self.user_list = user_list
