@@ -76,9 +76,7 @@ class Main:
         auth = input("Enter Password: ")
         auth2 = input("Confirm Password: ")
         user = User(login, auth, auth2)
-        # self.user_list.append(user)
         user.create_user(self.user_list)
-        # self.main_menu()
 
     def create_credentials(self):
         """
