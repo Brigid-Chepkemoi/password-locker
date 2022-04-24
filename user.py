@@ -31,14 +31,5 @@ class User:
             print(self.username+' '+self.password)
             print("User added successfully")
 
-    def get_user(self, username):
-        """
-        Method to modify  a username
-        """
-        for user in self.user_list:
-            if user.username == username:
-                return user
-            else:
-                return 0
 
 

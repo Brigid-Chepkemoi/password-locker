@@ -46,6 +46,7 @@ class Main:
         print("Press 1 to show your credentials")
         print("Press 2 to add a new credentials to your list")
         print("Press 3 to delete credentials")
+        print("Press 4 to copy credentials")
         action = input("select next action: ")
         credentials = Credentials(self.authenticated_user, self.cred_name, self.cred_password, self.cred_platform)
         if action == "1":
@@ -53,9 +54,16 @@ class Main:
         elif action == "2":
             self.create_credentials()
         elif action == "3":
-            accnt_to_del = input("Enter the account name to delete")
-            pltfrm_to_del = input("Enter the platform for the account to delete")
+            self.screen_clear()
+            accnt_to_del = input("Enter the account name to delete: ")
+            pltfrm_to_del = input("Enter the platform for the account to delete: ")
             credentials.delete_credentials(self.authenticated_user, accnt_to_del, pltfrm_to_del)
+        elif action == "4":
+            self.screen_clear()
+            self.reload_data()
+            accnt_to_copy = input("Enter the account name for the password you want to copy: ")
+            pltfrm_to_copy = input("Enter the platform for the account to copy: ")
+            credentials.copy_credentials(self.credentials_list, self.authenticated_user, accnt_to_copy, pltfrm_to_copy)
         else:
             self.credentials_menu()
 
