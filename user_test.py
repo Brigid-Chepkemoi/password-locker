@@ -23,6 +23,10 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.user_list.password2, "p1")
 
 
-
+    def screen_clear(self):
+        if os.name == 'posix':
+            _ = os.system('clear')
+        else:
+            _ = os.system('cls')
 if __name__ == '__main__':
         unittest.main()
