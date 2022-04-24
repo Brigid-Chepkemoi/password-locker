@@ -35,14 +35,7 @@ class Credentials(object):
             else:
                 print("User doesn't exist")
 
-    def show_credentials(self, credentials_list, authenticated_user):
-        """
-        method to show credentials for logged-in user
-        """
-        print('you' + '\t \t' + 'account' + '\t' + "\tpassword" + '\t' + "platform")
-        for user in credentials_list:
-            if user.startswith(authenticated_user):
-                print(user)
+
 
     def delete_credentials(self, authenticated_user, account, platform):
         """
