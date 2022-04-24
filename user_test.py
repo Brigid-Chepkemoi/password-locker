@@ -23,6 +23,13 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.user_list.password2, "p1")
 
 
-
+  def reload_data(self):
+        self.user_list=[]
+        self.credentials_list=[]
+        with open("/home/brie/dat1.txt") as file:
+            for line in file:
+                line = line.strip()
+                self.user_list.append(line)
+        file.close()
 if __name__ == '__main__':
         unittest.main()
