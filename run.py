@@ -28,7 +28,18 @@ class Main:
             sleep(5)
             self.authenticate()
 
-
+    def main_menu(self):
+        self.screen_clear()
+        self.reload_data()
+        print("Press 1 to create a user")
+        print("Press 2 to login to a  user account")
+        next_action = input("select next action: ")
+        if next_action == '1':
+            self.create_user()
+        elif next_action == '2':
+            self.authenticate()
+        else:
+            exit()
 
     def credentials_menu(self):
         self.screen_clear()

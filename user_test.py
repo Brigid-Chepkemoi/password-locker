@@ -23,17 +23,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.user_list.password2, "p1")
 
 
-   def main_menu(self):
-        self.screen_clear()
-        self.reload_data()
-        print("Press 1 to create a user")
-        print("Press 2 to login to a  user account")
-        next_action = input("select next action: ")
-        if next_action == '1':
-            self.create_user()
-        elif next_action == '2':
-            self.authenticate()
-        else:
-            exit()
+
 if __name__ == '__main__':
         unittest.main()
