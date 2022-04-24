@@ -11,12 +11,18 @@ class Credentials(object):
     platform = ""
 
     def __init__(self, created_by, username, password, platform):
+        """
+        Method to initialize class
+        """
         self.created_by = created_by
         self.username = username
         self.password = password
         self.platform = platform
 
     def create_credentials(self, credentials_list):
+        """
+        Method to create credentials and store in file
+        """
         if credentials_list.__contains__(
                 self.created_by + '\t \t' + self.username + '\t \t' + self.password + '\t \t' + self.platform):
             print("Account already exists")
@@ -29,6 +35,9 @@ class Credentials(object):
             print("Credentials added successfully")
 
     def delete_user(self, username):
+        """
+        Method to delete application user
+        """
         for user in self.user_list:
             if user.username == username:
                 self.user_list.remove(user)
@@ -61,6 +70,9 @@ class Credentials(object):
         print('Account deleted')
 
     def copy_credentials(self,credentials_list,authenticated_user, account, platform):
+        """
+        Method to copy credentials to clip board
+        """
         for accnt in credentials_list:
             if accnt.lstrip().startswith(authenticated_user + "\t \t" + account) and accnt.lstrip().endswith(platform):
                 info_list = re.split(r'\t+',accnt)
