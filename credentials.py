@@ -14,3 +14,17 @@ class Credentials(object):
         else:
             credentials_list.append(self)
 
+    def modify_user(self, username, email):
+        for user in self.user_list:
+            if user.username == username:
+                self.user_list.remove(user)
+                self._init_(username, email)
+            else:
+                print("User doesn't exist")
+
+    def delete_user(self, username):
+        for user in self.user_list:
+            if user.username == username:
+                self.user_list.remove(user)
+            else:
+                print("User doesn't exist")

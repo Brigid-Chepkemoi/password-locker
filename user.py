@@ -1,39 +1,44 @@
 class User:
-    user_list = []
+    """
+    This class creates a new user
+    """
     username = ""
-    email = ""
+    password = ""
+    password2 = ""
+    user_list = []
+
     authenticated = False
 
-    def __init__(self, username, email, user_list):
-        self.username = username
-        self.email = email
-        self.user_list = user_list
+    def __init__(self, login, auth, auth2):
+        self.username = login
+        self.password = auth
+        self.password2 = auth2
 
-    def save_user(self):
-        if self in self.user_list:
-            print("user already exist")
+    def create_user(self, user_list):
+        """
+        Method to save a user
+        """
+        self.user_list = user_list
+        if self.username+' '+self.password in self.user_list:
+            print("User already exists")
+        elif self.password != self.password2:
+            print("Password does not match")
         else:
             self.user_list.append(self)
+            handle = open("/home/brie/dat1.txt", "a")
+            handle.write(self.username+' '+self.password+'\n')
+            handle.close()
+            print(self.username+' '+self.password)
             print("User added successfully")
 
     def get_user(self, username):
+        """
+        Method to modify  a username
+        """
         for user in self.user_list:
             if user.username == username:
                 return user
             else:
                 return 0
 
-    def modify_user(self, username, email):
-        for user in self.user_list:
-            if user.username == username:
-                self.user_list.remove(user)
-                self._init_(username, email)
-            else:
-                print("User doesn't exist")
 
-    def delete_user(self, username):
-        for user in self.user_list:
-            if user.username == username:
-                self.user_list.remove(user)
-            else:
-                print("User doesn't exist")
