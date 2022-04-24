@@ -96,7 +96,14 @@ class Main:
         else:
             _ = os.system('cls')
 
-
+    def reload_data(self):
+        self.user_list=[]
+        self.credentials_list=[]
+        with open("/home/brie/dat1.txt") as file:
+            for line in file:
+                line = line.strip()
+                self.user_list.append(line)
+        file.close()
 
         with open("/home/brie/dat2.txt") as file:
             for line in file:
