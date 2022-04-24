@@ -90,7 +90,11 @@ class Main:
         credentials.create_credentials(self.credentials_list)
         self.main_menu()
 
-
+    def screen_clear(self):
+        if os.name == 'posix':
+            _ = os.system('clear')
+        else:
+            _ = os.system('cls')
 
     def reload_data(self):
         self.user_list=[]
