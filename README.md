@@ -16,15 +16,15 @@ Install python 3
 
 The user is able to;
 
-- View username
+- View username.
 
-- View credentials
+- View credentials.
 
-- Create new credentials for accounts
+- Create new credentials for accounts.
 
-- Modify their credentials by deleting
+- Modify their credentials by deleting.
 
-- Copy credentials to clipboard
+- Copy credentials to clipboard.
 
 ## Technologies
 
