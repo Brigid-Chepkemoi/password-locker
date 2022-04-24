@@ -91,12 +91,18 @@ class Main:
         self.main_menu()
 
     def screen_clear(self):
+        """
+        Method to clear screen
+        """
         if os.name == 'posix':
             _ = os.system('clear')
         else:
             _ = os.system('cls')
 
     def reload_data(self):
+        """
+        Method to reload data to list from file
+        """
         self.user_list=[]
         self.credentials_list=[]
         with open("/home/brie/dat1.txt") as file:
