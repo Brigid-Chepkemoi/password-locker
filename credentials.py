@@ -3,6 +3,8 @@ import re
 import pyperclip as pc
 
 
+
+
 class Credentials(object):
     system = ''
     username = ""
@@ -28,7 +30,7 @@ class Credentials(object):
             print("Account already exists")
         else:
             credentials_list.append(self.created_by + ' ' + self.username + ' ' + self.password + ' ' + self.platform)
-            handle = open("/home/brie/dat2.txt", "a")
+            handle = open("dat2.txt", "a")
             handle.write(
                 self.created_by + '\t \t' + self.username + '\t \t' + self.password + '\t \t' + self.platform + '\n')
             handle.close()
@@ -53,12 +55,13 @@ class Credentials(object):
             if user.startswith(authenticated_user):
                 print(user)
 
+
     def delete_credentials(self, authenticated_user, account, platform):
         """
         method to delete credentials
         """
-        input_file = open('/home/brie/dat2.txt', "r")
-        output_file = open('/home/brie/dat3.txt', "w")
+        input_file = open('dat2.txt', "r")
+        output_file = open('dat3.txt', "w")
         output_file.write(input_file.readline())
         for line in input_file:
             if not line.lstrip().startswith(authenticated_user + "\t \t" + account) and not line.lstrip().endswith(
@@ -66,10 +69,10 @@ class Credentials(object):
                 output_file.write(line)
         input_file.close()
         output_file.close()
-        os.rename('/home/brie/dat3.txt', '/home/brie/dat2.txt')
+        os.rename('dat3.txt', 'dat2.txt')
         print('Account deleted')
 
-    def copy_credentials(self,credentials_list,authenticated_user, account, platform):
+    def copy_credentials(self, credentials_list, authenticated_user, account, platform):
         """
         Method to copy credentials to clip board
         """
