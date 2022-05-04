@@ -105,13 +105,13 @@ class Main:
         """
         self.user_list=[]
         self.credentials_list=[]
-        with open("/home/brie/dat1.txt") as file:
+        with open("dat1.txt") as file:
             for line in file:
                 line = line.strip()
                 self.user_list.append(line)
         file.close()
 
-        with open("/home/brie/dat2.txt") as file:
+        with open("dat2.txt") as file:
             for line in file:
                 line = line.strip()
                 self.credentials_list.append(line)
