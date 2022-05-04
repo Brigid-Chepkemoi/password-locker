@@ -25,7 +25,7 @@ class User:
             print("Password does not match")
         else:
             self.user_list.append(self)
-            handle = open("/home/brie/dat1.txt", "a")
+            handle = open("dat1.txt", "a")
             handle.write(self.username+' '+self.password+'\n')
             handle.close()
             print(self.username+' '+self.password)

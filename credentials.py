@@ -3,8 +3,6 @@ import re
 import pyperclip as pc
 
 
-
-
 class Credentials(object):
     system = ''
     username = ""
@@ -55,7 +53,6 @@ class Credentials(object):
             if user.startswith(authenticated_user):
                 print(user)
 
-
     def delete_credentials(self, authenticated_user, account, platform):
         """
         method to delete credentials
@@ -78,7 +75,7 @@ class Credentials(object):
         """
         for accnt in credentials_list:
             if accnt.lstrip().startswith(authenticated_user + "\t \t" + account) and accnt.lstrip().endswith(platform):
-                info_list = re.split(r'\t+',accnt)
+                info_list = re.split(r'\t+', accnt)
                 while (" " in info_list):
                     info_list.remove(" ")
                 print(info_list)
